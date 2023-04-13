@@ -12,6 +12,10 @@ def get_pokemon_sprite(pokemon):
     return get_json('pokemon/' + pokemon)['sprites']['front_default']
 
 
+def get_pokemon_sprite_shiny(pokemon):
+    return get_json('pokemon/' + pokemon)['sprites']['front_shiny']
+
+
 def get_image(url):
     return Image.open(requests.get(url, stream=True).raw)
 
@@ -23,10 +27,18 @@ def generate_image_files(team):
         os.remove(os.path.join("pokemon_pictures", f))
     counter = 1
     for pokemon in team:
-        img = get_image(get_pokemon_sprite(pokemon.lower()))
-        img.save(f"pokemon_pictures/p{counter}.png")
-        counter += 1
+        if 's-' in pokemon:
+            pokemon = pokemon.replace('s-', '')
+            img = get_image(get_pokemon_sprite_shiny(pokemon.lower()))
+            img.save(f"pokemon_pictures/p{counter}.png")
+            counter += 1
+        else:
+            img = get_image(get_pokemon_sprite(pokemon.lower()))
+            img.save(f"pokemon_pictures/p{counter}.png")
+            counter += 1
 
 
 if __name__ == '__main__':
-    generate_image_files(["Aerodactyl", "Combusken", "Vileplume", "Quagsire", "Dusclops", "Flaaffy"])
+    # you can use both pokedex number and english name
+    # add s- to make it shiny
+    generate_image_files(["quagsire"])
