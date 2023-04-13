@@ -3,58 +3,66 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titel</title>
+    <title>Pokemon</title>
 </head>
 <style>
+
+    html, body {
+        background-image: url("background.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
     #container {
         position: relative;
     }
 
+
     #p1 {
         position: absolute;
-        left: 0;
-        top: 0;
+        left: 267px;
+        top: 897px;
     }
 
     #p2 {
         position: absolute;
-        left: 96px;
-        top: 0;
+        left: 417px;
+        top: 897px;
     }
 
     #p3 {
         position: absolute;
-        left: 192px;
-        top: 0;
+        left: 567px;
+        top: 897px;
     }
 
     #p4 {
         position: absolute;
-        left: 288px;
-        top: 0;
+        left: 717px;
+        top: 897px;
     }
 
     #p5 {
         position: absolute;
-        left: 384px;
-        top: 0;
+        left: 867px;
+        top: 897px;
     }
 
     #p6 {
         position: absolute;
-        left: 480px;
-        top: 0;
+        left: 1017px;
+        top: 897px;
     }
 </style>
 <body>
 <div id="container">
-    <img src="background.png" alt="Background" width="576" height="96" id="background">
-    <img src="pokemon_pictures/p1.png" alt=" " width="96" height="96" id="p1">
-    <img src="pokemon_pictures/p2.png" alt=" " width="96" height="96" id="p2">
-    <img src="pokemon_pictures/p3.png" alt=" " width="96" height="96" id="p3">
-    <img src="pokemon_pictures/p4.png" alt=" " width="96" height="96" id="p4">
-    <img src="pokemon_pictures/p5.png" alt=" " width="96" height="96" id="p5">
-    <img src="pokemon_pictures/p6.png" alt=" " width="96" height="96" id="p6">
+    <img src="pokemon_pictures/p1.png" onerror="this.style.display='none'" width="150" height="150" id="p1">
+    <img src="pokemon_pictures/p2.png" onerror="this.style.display='none'" width="150" height="150" id="p2">
+    <img src="pokemon_pictures/p3.png" onerror="this.style.display='none'" width="150" height="150" id="p3">
+    <img src="pokemon_pictures/p4.png" onerror="this.style.display='none'" width="150" height="150" id="p4">
+    <img src="pokemon_pictures/p5.png" onerror="this.style.display='none'" width="150" height="150" id="p5">
+    <img src="pokemon_pictures/p6.png" onerror="this.style.display='none'" width="105" height="150" id="p6">
+
 </div>
 </body>
 </html>
